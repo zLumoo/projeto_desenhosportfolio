@@ -1,2 +1,2 @@
 # projeto_desenhosportfolio
- SIte com o objetivo de apresentar o portfolio do artista Kotuka
+ SIte com o objetivo de apresentar o portfolio do artista Kotyka
