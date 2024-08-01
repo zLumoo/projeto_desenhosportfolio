@@ -134,7 +134,7 @@ img.desenho {
     height: 100%;
     filter: grayscale(40%);
     transition: filter 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.204);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.13);
 }
 
 img.desenho:hover{
