@@ -124,7 +124,8 @@ div.galeria{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: auto;   
+    margin: auto;
+    margin-top: 60px;
     width: 80%;
     max-width: 1275px;
     height: auto;
@@ -241,6 +242,5 @@ footer > p > a{
 #galeriaId{
     width: 100%;
     display: flex;
-    height: 70px;
-    top: -20;
+    scroll-margin-top: 50px;
 }
