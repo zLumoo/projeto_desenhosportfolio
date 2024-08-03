@@ -1,1 +1,24 @@
-        
+@charset "UTF-8";
+
+@media screen and (max-width: 720px){
+    .texto > h1 {
+        font-size: 34px;
+    }
+}
+
+@media screen and (max-width: 1400px){
+    .width-4 {
+        width: 48%;
+        flex: 1 1 auto;
+    }
+
+    .width-6 {
+        width: 80%;
+        flex: 1 1 auto;
+    }
+
+    .width-8 {
+        width: 98%;
+        flex: 1 1 auto;
+    }
+}

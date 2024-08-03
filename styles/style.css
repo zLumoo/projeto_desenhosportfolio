@@ -76,6 +76,7 @@ ul > li > a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     flex-direction: column;
     height: 100%;
 }
@@ -97,36 +98,44 @@ ul > li > a:hover{
 div.galeria{
     margin: auto;   
     width: 80%;
+    display: flex;
+    max-width: 1575px;
+    justify-content: space-between;
+    margin-top: 20px;
+    background-color: blue;
+    flex-wrap: wrap;
+    height: auto;
 }
 
 div.galeria-hidden{
-    display: none;
-}
-
-section.flex {
-    max-width: 1575px;
-    max-height: 520px;
-    justify-content: space-between;
     display: flex;
-    margin-top: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: auto;
 }
 
 .width-4 {
-    max-width: 32.6%;
     flex: 1;
     cursor: pointer;
+    flex: 1 1 30%;
+    margin: 10px 4px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.13);
 }
 
 .width-6 {
-    max-width: 49.5%;
     flex: 1;
     cursor: pointer;
+    flex: 1 1 40%;
+    margin: 10px 4px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.13);
 }
 
 .width-8 {
-    max-width: 64.2%;
     flex: 1;
     cursor: pointer;
+    flex: 1 1 63.2%;
+    margin: 10px 4px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.13);
 }
 
 img.desenho {
