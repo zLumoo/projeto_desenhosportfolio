@@ -22,3 +22,9 @@
         flex: 1 1 auto;
     }
 }
+
+@media screen and (min-width: 1800px){
+    button#showGallery{
+        padding: 12px 110px;
+    }
+}

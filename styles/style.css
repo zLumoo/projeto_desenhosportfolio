@@ -1,6 +1,19 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap');
 
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -45,13 +58,15 @@ ul {
 ul > li > a{
     color: black;
     padding: 8px 15px;
+    margin: 0px 2px;
     text-decoration: none;
     font-weight: 600;
 }
 
 ul > li > a:hover{
     color: rgb(255, 255, 255);
-    background-color: rgb(205, 205, 205);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.247);
+    background-color: rgb(177, 177, 177);
     border-radius: 5px;
 }
 
@@ -100,14 +115,18 @@ ul > li > a:hover{
     font-size: 20px;
 }
 
+.clickable-image {
+    width: 100px;
+    cursor: pointer;
+}
+
 div.galeria{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin: auto;   
-    margin-top: 20px;
     width: 80%;
-    max-width: 1575px;
+    max-width: 1275px;
     height: auto;
 }
 
@@ -115,10 +134,10 @@ div#galeria-hidden{
     display: none;
     justify-content: space-between;
     flex-wrap: wrap;
-    height: auto;
+    animation: fadeIn 0.3s ease;
 }
 
-button.showGallery{
+button#showGallery{
     padding: 12px 100px;
     margin: auto;
     font-size: 16px;
@@ -131,12 +150,12 @@ button.showGallery{
     transition: background-color 0.15s ease, transform 0.15s ease;
 }
 
-button.showGallery:hover {
+button#showGallery:hover {
     background-color: #373737;
     transform: translateY(-1px);
 }
 
-button.showGallery:active {
+button#showGallery:active {
     color: #000000;
     transform: translateY(0);
 }
@@ -145,7 +164,7 @@ button.showGallery:active {
     cursor: pointer;
     flex: 1 1 30%;
     width: 30%;
-    margin: 15px 6px;
+    margin: 16px 8px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.13);
 }
 
@@ -153,7 +172,7 @@ button.showGallery:active {
     cursor: pointer;
     flex: 1 1 40%;
     width: 40%;
-    margin: 15px 6px;
+    margin: 16px 8px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.13);
 }
 
@@ -161,7 +180,7 @@ button.showGallery:active {
     cursor: pointer;
     flex: 1 1 63.2%;
     width: 63.2%;
-    margin: 15px 6px;
+    margin: 16px 8px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.13);
 }
 
@@ -192,4 +211,36 @@ footer{
     margin-top: 40px;
     margin-left: 0px;
     padding: 30px 1px 1px;
+}
+
+footer > p > a{
+    color: rgb(99, 237, 255);
+}
+
+.overlay {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.expanded-image {
+    max-width: auto;
+    max-height: 90%;
+    object-fit: contain;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+}
+
+#galeriaId{
+    width: 100%;
+    display: flex;
+    height: 70px;
+    top: -20;
 }
