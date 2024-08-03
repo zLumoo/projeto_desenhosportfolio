@@ -10,11 +10,14 @@ body {
 header {
     display: flex;
     flex-direction: row;
-    background-color: rgb(246, 246, 246);
-    height: 70px;
     align-items: center;
     justify-content: space-between;
+    height: 70px;
+    position: sticky;
+    top: 0;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    background-color: rgb(246, 246, 246);
+    z-index: 1;
 }
 
 .first {
@@ -41,13 +44,15 @@ ul {
 
 ul > li > a{
     color: black;
-    margin-right: 10px;
+    padding: 8px 15px;
     text-decoration: none;
     font-weight: 600;
 }
 
 ul > li > a:hover{
-    color: rgb(171, 171, 171);
+    color: rgb(255, 255, 255);
+    background-color: rgb(205, 205, 205);
+    border-radius: 5px;
 }
 
 .background-image {
@@ -63,7 +68,7 @@ ul > li > a:hover{
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(128, 128, 128, 0.350), rgba(100, 100, 100, 0.350)), url("../desenhos/20240311_183229fl.png");
+    background: linear-gradient(to bottom, rgba(128, 128, 128, 0.350), rgba(100, 100, 100, 0.350)), url("../desenhos/20240311_183229fl.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -96,45 +101,67 @@ ul > li > a:hover{
 }
 
 div.galeria{
-    margin: auto;   
-    width: 80%;
     display: flex;
-    max-width: 1575px;
+    flex-wrap: wrap;
     justify-content: space-between;
+    margin: auto;   
     margin-top: 20px;
-    background-color: blue;
+    width: 80%;
+    max-width: 1575px;
+    height: auto;
+}
+
+div#galeria-hidden{
+    display: none;
+    justify-content: space-between;
     flex-wrap: wrap;
     height: auto;
 }
 
-div.galeria-hidden{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    height: auto;
+button.showGallery{
+    padding: 12px 100px;
+    margin: auto;
+    font-size: 16px;
+    color: #fff;
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+button.showGallery:hover {
+    background-color: #373737;
+    transform: translateY(-1px);
+}
+
+button.showGallery:active {
+    color: #000000;
+    transform: translateY(0);
 }
 
 .width-4 {
-    flex: 1;
     cursor: pointer;
     flex: 1 1 30%;
-    margin: 10px 4px;
+    width: 30%;
+    margin: 15px 6px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.13);
 }
 
 .width-6 {
-    flex: 1;
     cursor: pointer;
     flex: 1 1 40%;
-    margin: 10px 4px;
+    width: 40%;
+    margin: 15px 6px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.13);
 }
 
 .width-8 {
-    flex: 1;
     cursor: pointer;
     flex: 1 1 63.2%;
-    margin: 10px 4px;
+    width: 63.2%;
+    margin: 15px 6px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.13);
 }
 
