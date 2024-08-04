@@ -10,6 +10,13 @@
     }
 }
 
+:root{
+    --color1: white; /*Body #FFF1DA*/
+    --color2: white; /*Main #FFF1DA*/
+    --color3: rgb(246, 246, 246); /*Header #FFD791*/
+    --color4: black;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -18,6 +25,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: system-ui, -apple-system, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--color1);
 }
 
 header {
@@ -29,7 +37,7 @@ header {
     position: sticky;
     top: 0;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-    background-color: rgb(246, 246, 246);
+    background-color: var(--color3);
     z-index: 1;
 }
 
@@ -37,12 +45,18 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding: 2px 10px;
+    border-radius: 15px;
+}
+
+.first:hover {
+    background-color: rgb(255, 249, 242);
 }
 
 .first > img {
     border-radius: 999px;
     max-height: 42px;
-    margin: 0 5px;
+    margin-right: 5px;
 }
 
 .first > p {
@@ -129,6 +143,7 @@ div.galeria{
     width: 80%;
     max-width: 1275px;
     height: auto;
+    background-color: var(--color2);
 }
 
 div#galeria-hidden{
@@ -161,28 +176,26 @@ button#showGallery:active {
     transform: translateY(0);
 }
 
-.width-4 {
+.width{
     cursor: pointer;
+    margin: 22px 10px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.13);
+    text-align: center;
+}
+
+.width-4 {
     flex: 1 1 30%;
     width: 30%;
-    margin: 16px 8px;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.13);
 }
 
 .width-6 {
-    cursor: pointer;
     flex: 1 1 40%;
     width: 40%;
-    margin: 16px 8px;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.13);
 }
 
 .width-8 {
-    cursor: pointer;
     flex: 1 1 63.2%;
     width: 63.2%;
-    margin: 16px 8px;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.13);
 }
 
 img.desenho {
@@ -191,6 +204,7 @@ img.desenho {
     filter: grayscale(40%);
     transition: filter 0.3s ease;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.13);
+    border-radius: 2px;
 }
 
 img.desenho:hover{
@@ -205,13 +219,13 @@ img.black-white{
 }
 
 footer{
-    background-color: black;
+    background-color: var(--color4);
     color: white;
-    font-size: 18px;
     text-align: center;
     margin-top: 40px;
     margin-left: 0px;
-    padding: 30px 1px 1px;
+    padding: 50px 1px 1px;
+    line-height: 40px;
 }
 
 footer > p > a{
