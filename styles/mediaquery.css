@@ -33,6 +33,9 @@
     header{
         height: 62px;
     }
+    .background-container {
+        height: 83vh;
+    }
 
     .texto > h1{
         font-size: 36px;
@@ -40,5 +43,9 @@
 
     .texto > p{
         font-size: 18px;
+    }
+
+    div.galeria{
+        width: 90%;
     }
 }
