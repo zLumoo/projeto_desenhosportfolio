@@ -26,10 +26,10 @@ function closeImage() {
 
 document.addEventListener("DOMContentLoaded", function() {
     const imageUrls = [
-        '../desenhos_first/20220919_130844.jpg',
-        '../desenhos_first/20240311_183229fl.png',
-        '../desenhos_first/20220902_172549.png',
-        '../desenhos_first/20221027_132527.jpg'
+        'desenhos/20220919_130844_high.jpg',
+        'desenhos/20240311_183229fl_high.png',
+        'desenhos/20220902_172549_high.png',
+        'desenhos/20221027_132527_high.jpg'
     ];
 
     let currentIndex = 0;
