@@ -26,7 +26,7 @@ function closeImage() {
 
 document.addEventListener("DOMContentLoaded", function() {
     const imageUrls = [
-        '../desenhos/20240311_183229fl.jpg',
+        '../desenhos_first/20240311_183229fl.jpg',
         '../desenhos/20230119_185556bss.jpg',
         '../desenhos/20231026_145357.jpg',
         '../desenhos/20231124_102852bss.jpg'
