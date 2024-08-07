@@ -3,8 +3,6 @@ function show() {
     var button = document.getElementById("showGallery");
     galeria_show.style.display = 'flex';
     button.style.display = 'none';
-    console.log("sucesso!")
-
 }
 
 function expandImage(img) {
@@ -50,4 +48,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
     setInterval(showNextBackgroundImage, 4000);
 });
+
+function escurecer(element) {
+    var galeria = document.getElementById('galeriaId');
+    var main = document.getElementById('mainId')
+    
+    if (galeria.classList.contains('background-transparency')) {
+        galeria.classList.remove('background-transparency');
+        main.classList.remove('background-escuro');
+        galeria.classList.add('background-claro');
+        main.classList.add('background-claro');
+    } else {
+        galeria.classList.remove('background-claro');
+        main.classList.remove('background-claro');
+        galeria.classList.add('background-transparency');
+        main.classList.add('background-escuro');
+    }
+
+    if (element.textContent === 'light_mode') {
+        console.log('dark')
+        element.textContent = 'dark_mode';
+      } else {
+        element.textContent = 'light_mode';
+      }
+}
 

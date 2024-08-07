@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/mediaquery.css">
     <link rel="shortcut icon" href="desenhos_first/kotyka_img.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 </head>
 <body>
     <header>
@@ -17,11 +17,14 @@
         </div>
         <ul>
             <li><a href="#">Inicio</a></li>
-            <li><a href="#galeriaId">Galeria</a></li>
+            <li><a href="#scrollGaleria">Galeria</a></li>
+            <li><span onclick="escurecer(this)" class="material-symbols-outlined">
+                dark_mode
+                </span></li>
         </ul>
     </header>
 
-    <main>
+    <main id="mainId" class="background-claro">
         <section class="background-container">
             <div class="background-image background-image-1"></div>
             <div class="background-image background-image-2"></div>
@@ -34,8 +37,9 @@
         <div class="overlay" id="overlay" onclick="closeImage()">
             <img id="expanded-img" class="expanded-image">
         </div>
-        <div id="galeriaId"></div>
-        <div class="galeria">
+        <div id="scrollGaleria">
+        </div>
+        <div id="galeriaId" class="galeria background-claro">
             <div class="width width-4"><img onclick="expandImage(this)" class="desenho" src="desenhos/20240311_183229fl_high.png" alt="" >Título</div>
             <div class="width width-4"><img onclick="expandImage(this)" class="desenho" src="desenhos/20240717_222651fl.jpg" alt=""></div>
             <div class="width width-4"><img onclick="expandImage(this)" class="desenho" src="desenhos/20240724_164405fl.jpg" alt=""></div>

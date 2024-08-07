@@ -11,10 +11,13 @@
 }
 
 :root{
-    --color1: white; /*Body #FFF1DA*/
-    --color2: white; /*Main #FFF1DA*/
-    --color3: rgb(246, 246, 246); /*Header #FFD791*/
+    --color1: #f6f6f6; /*Body*/
+    --color11: rgba(246, 246, 246, 0);
+    --color2: #f6f6f6; /*Main*/
+    --color3: #e0e0e0; /*Header*/
     --color4: black;
+
+    --color5: rgb(0, 0, 0); /*Body escuro*/
 }
 
 html {
@@ -25,7 +28,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: system-ui, -apple-system, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: var(--color1);
+    transition: background-image 1s ease-in-out;
 }
 
 header {
@@ -50,7 +53,7 @@ header {
 }
 
 .first:hover {
-    background-color: rgb(255, 249, 242);
+    background-color: rgb(192, 192, 192);
 }
 
 .first > img {
@@ -60,6 +63,7 @@ header {
 }
 
 .first > p {
+    color: black;
     text-shadow: 1px 1px 5px rgba(188, 188, 188, 0.4);
 }
 
@@ -67,11 +71,17 @@ ul {
     display: flex;
     flex-direction: row;
     list-style-type: none;
+    margin-right: 8px;
+}
+
+ul > li{
+    display: flex;
+    text-align: center;
 }
 
 ul > li > a{
     color: black;
-    padding: 8px 15px;
+    padding: 8px 12px;
     margin: 0px 2px;
     text-decoration: none;
     font-weight: 600;
@@ -84,6 +94,16 @@ ul > li > a:hover{
     border-radius: 5px;
 }
 
+ul > li > span{
+    cursor: pointer;
+    font-size: 28px !important;
+}
+
+ul > li > span:hover{
+    color: #ffffff;
+    text-shadow: 1px 1px 5px #37373781;
+}
+  
 .background-container {
     position: relative;
     height: 85vh;
@@ -99,6 +119,7 @@ ul > li > a:hover{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed;
     opacity: 0;
     transition: opacity 0.6s ease-in-out;
 }
@@ -163,7 +184,6 @@ div.galeria{
     width: 80%;
     max-width: 1275px;
     height: auto;
-    background-color: var(--color2);
 }
 
 div#galeria-hidden{
@@ -222,7 +242,7 @@ img.desenho {
     width: 100%;
     height: 100%;
     filter: grayscale(30%);
-    transition: filter 0.3s ease;
+    transition: filter 0.25s ease;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.13);
     border-radius: 2px;
 }
@@ -230,7 +250,7 @@ img.desenho {
 img.desenho:hover{
     filter: grayscale(0%);
     transform: scale(1.008);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.25s ease-in-out, box-shadow 0.3s ease-in-out;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.300);
 }
 
@@ -273,8 +293,23 @@ footer > p > a{
     z-index: 1001;
 }
 
-#galeriaId{
+#scrollGaleria{
     width: 100%;
     display: flex;
     scroll-margin-top: 60px;
+}
+
+.background-claro {
+    background-image: linear-gradient(to bottom, var(--color1));
+    color: black;
+}
+
+.background-escuro {
+    background-image: linear-gradient(to right top, rgb(0, 0, 0), rgb(28, 28, 28), rgb(43, 43, 43), rgb(63, 63, 63));
+    color: white;
+}
+
+.background-transparencyy {
+    opacity: 0;
+    color: white;
 }
