@@ -51,22 +51,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function escurecer(element) {
     var galeria = document.getElementById('galeriaId');
-    var main = document.getElementById('mainId')
+    var main = document.getElementById('mainId');
+    var header = document.getElementById('headerId');
     
-    if (galeria.classList.contains('background-transparency')) {
-        galeria.classList.remove('background-transparency');
-        main.classList.remove('background-escuro');
+    if (galeria.classList.contains('background-escuro')) {
+        galeria.classList.remove('background-escuro');
         galeria.classList.add('background-claro');
+        main.classList.remove('background-escuro');
         main.classList.add('background-claro');
+        header.classList.remove('background-escuro-header');
+        header.classList.add('background-claro-header');
     } else {
         galeria.classList.remove('background-claro');
+        galeria.classList.add('background-escuro');
         main.classList.remove('background-claro');
-        galeria.classList.add('background-transparency');
         main.classList.add('background-escuro');
+        header.classList.remove('background-claro-header');
+        header.classList.add('background-escuro-header');
     }
 
     if (element.textContent === 'light_mode') {
-        console.log('dark')
         element.textContent = 'dark_mode';
       } else {
         element.textContent = 'light_mode';

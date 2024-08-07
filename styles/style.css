@@ -10,14 +10,23 @@
     }
 }
 
+@keyframes toBottom {
+    0%{
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(3px);
+    }
+}
+
 :root{
     --color1: #f6f6f6; /*Body*/
-    --color11: rgba(246, 246, 246, 0);
     --color2: #f6f6f6; /*Main*/
     --color3: #e0e0e0; /*Header*/
-    --color4: black;
+    --color4: black; /*Footer*/
 
     --color5: rgb(0, 0, 0); /*Body escuro*/
+    --color6: rgb(63, 63, 63); /*Header escuro*/
 }
 
 html {
@@ -31,6 +40,13 @@ body {
     transition: background-image 1s ease-in-out;
 }
 
+/*
+
+
+
+
+Header */
+
 header {
     display: flex;
     flex-direction: row;
@@ -40,7 +56,6 @@ header {
     position: sticky;
     top: 0;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-    background-color: var(--color3);
     z-index: 3;
 }
 
@@ -56,6 +71,10 @@ header {
     background-color: rgb(192, 192, 192);
 }
 
+.background-escuro-header > .first:hover {
+    background-color: rgb(108, 108, 108);
+}
+
 .first > img {
     border-radius: 999px;
     max-height: 42px;
@@ -63,7 +82,6 @@ header {
 }
 
 .first > p {
-    color: black;
     text-shadow: 1px 1px 5px rgba(188, 188, 188, 0.4);
 }
 
@@ -80,30 +98,57 @@ ul > li{
 }
 
 ul > li > a{
-    color: black;
     padding: 8px 12px;
     margin: 0px 2px;
     text-decoration: none;
     font-weight: 600;
 }
 
-ul > li > a:hover{
+.background-claro-header a{
+    background-color: var(--color3);
+    color: black;
+}
+
+.background-escuro-header a{
+    background-color: var(--color6);
+    color: white;
+}
+
+.ulFirst a:hover{
     color: rgb(255, 255, 255);
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.247);
     background-color: rgb(177, 177, 177);
     border-radius: 5px;
 }
 
-ul > li > span{
-    cursor: pointer;
-    font-size: 28px !important;
+.background-escuro-header a:hover{
+    background-color: rgb(120, 120, 120);
 }
 
-ul > li > span:hover{
-    color: #ffffff;
-    text-shadow: 1px 1px 5px #37373781;
+.background-escuro-header span, .background-claro-header span{
+    cursor: pointer;
+    font-size: 30px !important;
 }
-  
+
+.background-claro-header span:hover{
+    text-shadow: 1px 1px 5px rgba(141, 141, 141, 0.25);
+    transform: translateY(3px);
+    animation: toBottom 0.3s ease-in-out;
+}
+
+.background-escuro-header span:hover{
+    text-shadow: 1px 1px 5px rgba(181, 181, 181, 0.26);
+    transform: translateY(3px);
+    animation: toBottom 0.3s ease-in-out;
+}
+
+/*
+
+
+
+
+Conteiner com os desenhos */
+
 .background-container {
     position: relative;
     height: 85vh;
@@ -170,10 +215,46 @@ ul > li > span:hover{
     font-size: 22px;
 }
 
-.clickable-image {
-    width: 100px;
-    cursor: pointer;
+/*
+
+
+
+
+Overlay */
+
+.overlay {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.615);
+    z-index: 1000;
 }
+
+.expanded-image {
+    max-width: auto;
+    max-height: 90%;
+    object-fit: contain;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+}
+
+#scrollGaleria{
+    width: 100%;
+    display: flex;
+    scroll-margin-top: 60px;
+}
+
+/*
+
+
+
+
+Galeria */
 
 div.galeria{
     display: flex;
@@ -181,6 +262,7 @@ div.galeria{
     justify-content: space-between;
     margin: auto;
     margin-top: 5px;
+    padding-bottom: 40px;
     width: 80%;
     max-width: 1275px;
     height: auto;
@@ -196,7 +278,6 @@ div#galeria-hidden{
 button#showGallery{
     padding: 12px 100px;
     margin: auto;
-    font-size: 16px;
     color: #fff;
     background-color: #000000;
     border: none;
@@ -205,10 +286,25 @@ button#showGallery{
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.15s ease, transform 0.15s ease;
 }
+button#showGallery .material-symbols-outlined{
+    font-size: 26px !important;
+}
+.background-escuro button#showGallery{
+    background-color: #eaeaea;
+    color: #191919;
+}
 
-button#showGallery:hover {
+.background-claro button#showGallery:hover {
     background-color: #373737;
-    transform: translateY(-1px);
+    transform: translateY(3px);
+    animation: toBottom 0.5s ease-in-out;
+}
+
+.background-escuro button#showGallery:hover {
+    color: #000000;
+    background-color: #aeaeae;
+    transform: translateY(3px);
+    animation: toBottom 0.5s ease-in-out;
 }
 
 button#showGallery:active {
@@ -262,7 +358,6 @@ footer{
     background-color: var(--color4);
     color: white;
     text-align: center;
-    margin-top: 40px;
     margin-left: 0px;
     padding: 50px 1px 1px;
     line-height: 40px;
@@ -272,44 +367,32 @@ footer > p > a{
     color: rgb(99, 237, 255);
 }
 
-.overlay {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.615);
-    z-index: 1000;
-}
+/*
 
-.expanded-image {
-    max-width: auto;
-    max-height: 90%;
-    object-fit: contain;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    z-index: 1001;
-}
 
-#scrollGaleria{
-    width: 100%;
-    display: flex;
-    scroll-margin-top: 60px;
+
+
+JavaScript */
+.background-claro, .background-escuro{
+    transition: background-color 0.5s ease;
 }
 
 .background-claro {
-    background-image: linear-gradient(to bottom, var(--color1));
+    background-color: var(--color1);
     color: black;
 }
 
 .background-escuro {
-    background-image: linear-gradient(to right top, rgb(0, 0, 0), rgb(28, 28, 28), rgb(43, 43, 43), rgb(63, 63, 63));
+    background-color: rgb(25, 25, 25);
     color: white;
 }
 
-.background-transparencyy {
-    opacity: 0;
+.background-claro-header {
+    background-color: var(--color3);
+    color: black;
+}
+
+.background-escuro-header {
+    background-color: var(--color6);
     color: white;
 }
