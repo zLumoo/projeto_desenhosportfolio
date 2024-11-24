@@ -94,7 +94,7 @@ function closeScroll_buttonId() {
 
 const scroll_button = document.getElementById('scroll-buttonId');
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 640) {
+    if (window.scrollY > 670) {
         scroll_button.style.display = 'none';
     }
 });
