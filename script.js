@@ -1,7 +1,7 @@
 function show() {
     var galeria_show = document.getElementById("galeria-hidden");
     var button = document.getElementById("showGallery");
-    galeria_show.style.display = 'flex';
+    galeria_show.style.display = 'grid';
     button.style.display = 'none';
 }
 
@@ -51,23 +51,33 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function escurecer(element) {
     var galeria = document.getElementById('galeriaId');
+    var galeria_hidden = document.getElementById('galeria-hidden');
     var main = document.getElementById('mainId');
     var header = document.getElementById('headerId');
+    var body = document.getElementById('body');
     
     if (galeria.classList.contains('background-escuro')) {
         galeria.classList.remove('background-escuro');
+        galeria_hidden.classList.add('background-claro');
+        galeria_hidden.classList.remove('background-escuro');
         galeria.classList.add('background-claro');
         main.classList.remove('background-escuro');
         main.classList.add('background-claro');
         header.classList.remove('background-escuro-header');
         header.classList.add('background-claro-header');
+        body.classList.remove('background-escuro');
+        body.classList.add('background-claro');
     } else {
         galeria.classList.remove('background-claro');
         galeria.classList.add('background-escuro');
+        galeria_hidden.classList.remove('background-claro');
+        galeria_hidden.classList.add('background-escuro');
         main.classList.remove('background-claro');
         main.classList.add('background-escuro');
         header.classList.remove('background-claro-header');
         header.classList.add('background-escuro-header');
+        body.classList.remove('background-claro');
+        body.classList.add('background-escuro');
     }
 
     if (element.textContent === 'light_mode') {
@@ -77,3 +87,14 @@ function escurecer(element) {
       }
 }
 
+function closeScroll_buttonId() {
+    var scroll_button = document.getElementById('scroll-buttonId');
+    scroll_button.style.display = "none";
+}
+
+const scroll_button = document.getElementById('scroll-buttonId');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 640) {
+        scroll_button.style.display = 'none';
+    }
+});

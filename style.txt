@@ -19,26 +19,6 @@
     }
 }
 
-/* Animação de subir e descer */
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-/* Animação da seta */
-@keyframes arrowBounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-5px); /* Movimento menor para a seta */
-    }
-}
-
 :root{
     --color1: #f6f6f6; /*Body*/
     --color2: #f6f6f6; /*Main*/
@@ -57,7 +37,6 @@ body {
     padding: 0;
     margin: 0;
     font-family: system-ui, -apple-system, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #f6f6f6;
 }
 
 /*
@@ -72,8 +51,7 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    height: 54px;
-    padding: 8px;
+    height: 70px;
     position: sticky;
     top: 0;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
@@ -99,7 +77,7 @@ header {
 
 .first > img {
     border-radius: 999px;
-    height: 48px;
+    max-height: 42px;
     margin-right: 5px;
 }
 
@@ -269,7 +247,7 @@ Overlay (div que aparece após clicar em um desenho)*/
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
-    scroll-margin-top: 80px;
+    scroll-margin-top: 60px;
 }
 
 /*
@@ -280,36 +258,33 @@ Overlay (div que aparece após clicar em um desenho)*/
 Galeria */
 
 div.galeria{
-    display: grid;
-    grid-template-columns: repeat(24, minmax(0.1px, 1fr));
-    gap: 5px;
-    grid-auto-flow: dense;
-    width: 82%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    margin-top: 5px;
+    width: 86%;
     max-width: 1650px;
-    margin: 25px auto auto auto;   
+    height: auto;
 }
 
 div#galeria-hidden{
     display: none;
-    margin-top: 25px; 
     animation: fadeIn 0.3s ease;
-}
-
-a > button#scroll-buttonId{
-    transition: background-color 0.15s ease, transform 0.15s ease;
-    animation: bounce 2s infinite;
 }
 
 button#showGallery{
     display: block;
     padding: 12px 100px;
-    margin: 20px auto;
+    margin: auto;
+    margin-bottom: 20px;
     color: #fff;
     background-color: #000000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.15s ease, transform 0.15s ease;
 }
 
 button#showGallery .material-symbols-outlined{
@@ -339,13 +314,40 @@ button#showGallery:active {
     transform: translateY(0);
 }
 
-.item{
+.width{
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin: 12px;
-    margin-bottom: 15px;
+    align-items: center;
+    margin: 22px 10px;
+    text-align: center;
+    height: auto;
+    width: 40%;
+    background-color: rgba(255, 255, 255, 0);
 }
+
+.width-4 {
+    flex: 1 1 30%;
+    width: 30%;
+    max-width: 600px;
+}
+
+.width-5 {
+    flex: 1 1 35%;
+    width: 35%;
+    max-width: 800px;
+}
+
+.width-6 {
+    flex: 1.5 1 50%;
+    width: 50%; 
+    max-width: 1000px; 
+}
+
+.width-8 {
+    flex: 1 1 40%;
+    width: 40%;
+    max-width: 800px;
+} 
 
 img.desenho {
     cursor: pointer;
@@ -354,6 +356,7 @@ img.desenho {
     transition: filter 0.25s ease;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.13);
     border-radius: 2px;
+    object-fit: cover;
 }
 
 img.desenho:hover{
@@ -376,12 +379,13 @@ footer{
     background-color: var(--color4);
     color: white;
     text-align: center;
+    margin-left: 0px;
     padding: 50px 1px 1px;
-    margin-top: 60px;
     line-height: 40px;
 }
 
-footer > p > a, footer > p > strong > a{
+footer > p > a{
+    color: rgb(68, 161, 255);
     text-decoration: none;
 }
 
@@ -389,87 +393,6 @@ footer > p > a:hover{
     color: rgb(133, 194, 255);
 }
 
-
-/*
-
-
-
-
-grid */
-.item1{
-    grid-column: 1/11;
-}
-.item2{
-    grid-column: 11/18;
-}
-.item3{
-    grid-column: 18/25;
-}
-
-.item4{
-    grid-column: 1/9;
-}
-.item5{
-    grid-column: 9/17;
-}
-.item6{
-    grid-column: 17/25;
-}
-
-.item7{
-    grid-column: 1/16;
-}
-.item8{
-    grid-column: 16/25;
-}
-
-.item9{
-    grid-column: 1/10;
-}
-.item10{
-    grid-column: 10/25;
-}
-/*galeria-hidden*/
-.item11{
-    grid-column: 1/9;
-}
-.item12{
-    grid-column: 9/17;
-}
-.item13{
-    grid-column: 17/25;
-}
-
-.item14{
-    grid-column: 1/9;
-}
-.item15{
-    grid-column: 9/17;
-}
-.item16{
-    grid-column: 17/25;
-}
-
-.item17{
-    grid-column: 1/9;
-}
-.item18{
-    grid-column: 9/17;
-}
-.item19{
-    grid-column: 17/25;
-}
-
-.item20{
-    grid-column: 1/10;
-}
-.item21{
-    grid-column: 10/25;
-}
-
-.item22{
-    grid-column: 5/21;
-}
 
 /*
 
@@ -506,7 +429,7 @@ JavaScript */
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #424e5f;
+    background-color: #3d4c61;
     border: none;
     border-radius: 50%;
     width: 60px;

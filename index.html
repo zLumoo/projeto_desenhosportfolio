@@ -9,16 +9,16 @@
     <link rel="shortcut icon" href="desenhos_first/kotyka_img.png" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 </head>
-<body>
+<body id="body" on>
     <header id="headerId" class="background-claro-header">
-        <div class="first">
+        <a class="first" href="https://discord.com/users/419867844893999131">
             <img src="desenhos_first/kotyka_img.png" alt="">
             <p>Kotyka</p>   
-        </div>
+        </a>
         <ul class="ulFirst">
             <li><a href="#">Inicio</a></li>
             <li><a href="#scrollGaleria">Galeria</a></li>
-            <li><span onclick="escurecer(this)" class="material-symbols-outlined">
+            <li><span onclick="escurecer(this)" class="material-symbols-outlined" style="margin-top: 2px;">
                 dark_mode
                 </span></li>
         </ul>
@@ -37,42 +37,52 @@
         <div class="overlay" id="overlay" onclick="closeImage()">
             <img id="expanded-img" class="expanded-image">
         </div>
+
+        <a href="#scrollGaleria" >
+            <button id="scroll-buttonId" onclick="closeScroll_buttonId()" class="scroll-button">
+                <span class="arrow">↓</span>
+            </button>
+        </a>
+
         <div id="scrollGaleria">
         </div>
+
         <div id="galeriaId" class="galeria background-claro">
-            <div class="width width-4"><img onclick="expandImage(this)" class="desenho" src="desenhos/20240311_183229fl_high.jpg" alt="" >Título</div>
-            <div class="width width-4"><img onclick="expandImage(this)" class="desenho" src="desenhos/20240717_222651fl.jpg" alt=""></div>
-            <div class="width width-4"><img onclick="expandImage(this)" class="desenho" src="desenhos/20240724_164405fl.jpg" alt=""></div>
-            <div class="width width-4"><img onclick="expandImage(this)" class="desenho black-white" src="desenhos/20221219_120605bss.jpg" alt=""></div>
-            <div class="width width-4"><img onclick="expandImage(this)" class="desenho" src="desenhos/20230108_164238bss.jpg" alt=""></div>
-            <div class="width width-4"><img onclick="expandImage(this)" class="desenho" src="desenhos/20230119_185556bss.jpg" alt=""></div>
-            <div class="width width-4"><img onclick="expandImage(this)" class="desenho" src="desenhos/20231124_102852bss.jpg" alt=""></div>
-            <div class="width width-8"><img onclick="expandImage(this)" class="desenho" src="desenhos/20220902_172549_high.jpg" alt=""></div>
-            <div class="width width-8"><img onclick="expandImage(this)" class="desenho" src="desenhos/20221027_132527_high.jpg" alt=""></div>
-            <div class="width width-4 width-8-media-query"><img onclick="expandImage(this)" class="desenho" src="desenhos/20221212_191736.jpg" alt=""></div>
-            <button id="showGallery"  onclick="show()">
-                <span class="material-symbols-outlined">
-                    menu
-                    </span>
-            </button>
-            <div id="galeria-hidden">
-                <div class="width width-4"><img onclick="expandImage(this)" class="desenho" src="desenhos/20230117_120658.jpg" alt=""></div>
-                <div class="width width-4"><img onclick="expandImage(this)" class="desenho" src="desenhos/20230122_135529.jpg" alt=""></div>
-                <div class="width width-4"><img onclick="expandImage(this)" class="desenho" src="desenhos/20230130_164516.jpg" alt=""></div>
-                <div class="width width-4"><img onclick="expandImage(this)" class="desenho" src="desenhos/20230313_145825.jpg" alt=""></div>
-                <div class="width width-4"><img onclick="expandImage(this)" class="desenho" src="desenhos/20230418_180020.jpg" alt=""></div>
-                <div class="width width-4"><img onclick="expandImage(this)" class="desenho" src="desenhos/20231026_145357.jpg" alt=""></div>
-                <div class="width width-4"><img onclick="expandImage(this)" class="desenho" src="desenhos/20231204_165422.jpg" alt=""></div>
-                <div class="width width-4"><img onclick="expandImage(this)" class="desenho" src="desenhos/20240427_141245.jpg" alt=""></div>
-                <div class="width width-4"><img onclick="expandImage(this)" class="desenho" src="desenhos/20210513_134253.jpg" alt=""></div>
-                <div class="width width-6"><img onclick="expandImage(this)" class="desenho" src="desenhos/20221016_125352.jpg" alt=""></div>
-                <div class="width width-6 "><img onclick="expandImage(this)" class="desenho" src="desenhos/20220919_130844_high.jpg" alt=""></div>
+            <div class="item item1 r1"><img onclick="expandImage(this)" class="desenho desenhoDigital" src="desenhos/armadura_abissal_real.jpg" alt="" ></div>
+            <div class="item item2 r1"><img onclick="expandImage(this)" class="desenho" src="desenhos/20240311_183229fl_high.jpg" alt="" ></div>
+            <div class="item item3 r1"><img onclick="expandImage(this)" class="desenho" src="desenhos/20240717_222651fl.jpg" alt=""></div>
+            <div class="item item4 r2"><img onclick="expandImage(this)" class="desenho" src="desenhos/20240724_164405fl.jpg" alt=""></div>
+            <div class="item item5 r2"><img onclick="expandImage(this)" class="desenho black-white" src="desenhos/20221219_120605bss.jpg" alt=""></div>
+            <div class="item item6 r2"><img onclick="expandImage(this)" class="desenho" src="desenhos/20230108_164238bss.jpg" alt=""></div>
+            <div class="item item7 r3"><img onclick="expandImage(this)" class="desenho" src="desenhos/20221027_132527_high.jpg" alt=""></div>
+            <div class="item item8 r3"><img onclick="expandImage(this)" class="desenho" src="desenhos/20231124_102852bss.jpg" alt=""></div>
+            <div class="item item9 r4"><img onclick="expandImage(this)" class="desenho" src="desenhos/20230119_185556bss.jpg" alt=""></div>
+            <div class="item item10 r4"><img onclick="expandImage(this)" class="desenho" src="desenhos/20220902_172549_high.jpg" alt=""></div>
+        </div>
+        <button id="showGallery"  onclick="show()">
+            <span class="material-symbols-outlined">
+                menu
+                </span>
+        </button>
+        <div id="galeria-hidden" class="galeria background-claro">
+                <div class="item item11 r1"><img onclick="expandImage(this)" class="desenho" src="desenhos/20230117_120658.jpg" alt=""></div>
+                <div class="item item12 r1"><img onclick="expandImage(this)" class="desenho" src="desenhos/20230122_135529.jpg" alt=""></div>
+                <div class="item item13 r1"><img onclick="expandImage(this)" class="desenho" src="desenhos/20230130_164516.jpg" alt=""></div>
+                <div class="item item14 r2"><img onclick="expandImage(this)" class="desenho" src="desenhos/20240427_141245.jpg" alt=""></div>
+                <div class="item item15 r2"><img onclick="expandImage(this)" class="desenho" src="desenhos/20221212_191736.jpg" alt=""></div>
+                <div class="item item16 r2"><img onclick="expandImage(this)" class="desenho" src="desenhos/20230418_180020.jpg" alt=""></div>
+                <div class="item item17 r3"><img onclick="expandImage(this)" class="desenho" src="desenhos/20231026_145357.jpg" alt=""></div>
+                <div class="item item18 r3"><img onclick="expandImage(this)" class="desenho" src="desenhos/20231204_165422.jpg" alt=""></div>
+                <div class="item item19 r3"><img onclick="expandImage(this)" class="desenho" src="desenhos/20210513_134253.jpg" alt=""></div>
+                <div class="item item20 r4"><img onclick="expandImage(this)" class="desenho" src="desenhos/20230313_145825.jpg" alt=""></div>
+                <div class="item item21 r4"><img onclick="expandImage(this)" class="desenho" src="desenhos/20221016_125352.jpg" alt=""></div>
+                <div class="item item22 r5"><img onclick="expandImage(this)" class="desenho" src="desenhos/20220919_130844_high.jpg" alt=""></div>
             </div>
         </div>
     </main>
     <footer>
-        <p><strong>Todos os desenhos foram feitos pelo artista Kotyka &#x1F3A8;</strong></p>
-        <p>Site criado por <a href="https://github.com/zlumoo">@zLumoo</a></p>
+        <p><strong>Todos os desenhos foram feitos pelo artista <a style="color: aquamarine;" href="https://discord.com/users/419867844893999131">Kotyka &#x1F3A8;</a></strong></p>
+        <p>Site criado por <a style="color: rgb(68, 161, 255);" href="https://github.com/zlumoo">@zLumoo</a></p>
     </footer>
 
     <script src="script.js"></script>
